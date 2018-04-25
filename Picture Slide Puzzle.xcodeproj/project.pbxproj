@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDA89BA8208FB65100CA07E6 /* PuzzleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */; };
 		CDEEE346208F3678004F4257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE345208F3678004F4257 /* AppDelegate.swift */; };
-		CDEEE348208F3678004F4257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE347208F3678004F4257 /* ViewController.swift */; };
 		CDEEE34B208F3678004F4257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE349208F3678004F4257 /* Main.storyboard */; };
 		CDEEE34D208F367A004F4257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE34C208F367A004F4257 /* Assets.xcassets */; };
 		CDEEE350208F367A004F4257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE34E208F367A004F4257 /* LaunchScreen.storyboard */; };
+		CDEEE359208F3995004F4257 /* SlidePuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE358208F3995004F4257 /* SlidePuzzle.swift */; };
+		CDEEE35B208F3AB9004F4257 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE35A208F3AB9004F4257 /* Slide.swift */; };
+		CDEEE35D208F3FCC004F4257 /* SlidePuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE35C208F3FCC004F4257 /* SlidePuzzleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCollectionViewCell.swift; sourceTree = "<group>"; };
 		CDEEE342208F3678004F4257 /* Picture Slide Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picture Slide Puzzle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEEE345208F3678004F4257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDEEE347208F3678004F4257 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CDEEE34A208F3678004F4257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDEEE34C208F367A004F4257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDEEE34F208F367A004F4257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDEEE351208F367A004F4257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDEEE358208F3995004F4257 /* SlidePuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidePuzzle.swift; sourceTree = "<group>"; };
+		CDEEE35A208F3AB9004F4257 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		CDEEE35C208F3FCC004F4257 /* SlidePuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidePuzzleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		CDEEE344208F3678004F4257 /* Picture Slide Puzzle */ = {
 			isa = PBXGroup;
 			children = (
-				CDEEE345208F3678004F4257 /* AppDelegate.swift */,
-				CDEEE347208F3678004F4257 /* ViewController.swift */,
+				CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */,
+				CDEEE358208F3995004F4257 /* SlidePuzzle.swift */,
+				CDEEE35A208F3AB9004F4257 /* Slide.swift */,
+				CDEEE35C208F3FCC004F4257 /* SlidePuzzleViewController.swift */,
 				CDEEE349208F3678004F4257 /* Main.storyboard */,
-				CDEEE34C208F367A004F4257 /* Assets.xcassets */,
-				CDEEE34E208F367A004F4257 /* LaunchScreen.storyboard */,
+				CDEEE357208F368F004F4257 /* Supporting Files */,
 				CDEEE351208F367A004F4257 /* Info.plist */,
 			);
 			path = "Picture Slide Puzzle";
+			sourceTree = "<group>";
+		};
+		CDEEE357208F368F004F4257 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDEEE345208F3678004F4257 /* AppDelegate.swift */,
+				CDEEE34C208F367A004F4257 /* Assets.xcassets */,
+				CDEEE34E208F367A004F4257 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDEEE348208F3678004F4257 /* ViewController.swift in Sources */,
+				CDEEE35D208F3FCC004F4257 /* SlidePuzzleViewController.swift in Sources */,
+				CDA89BA8208FB65100CA07E6 /* PuzzleCollectionViewCell.swift in Sources */,
+				CDEEE35B208F3AB9004F4257 /* Slide.swift in Sources */,
 				CDEEE346208F3678004F4257 /* AppDelegate.swift in Sources */,
+				CDEEE359208F3995004F4257 /* SlidePuzzle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
