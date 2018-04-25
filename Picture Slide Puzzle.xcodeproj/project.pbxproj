@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD82FB142091405E00BE6CDF /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD82FB132091405E00BE6CDF /* PopOverViewController.swift */; };
 		CDA89BA8208FB65100CA07E6 /* PuzzleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */; };
+		CDAAD97F20900E2C00E90BA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAAD97E20900E2C00E90BA0 /* Extensions.swift */; };
 		CDEEE346208F3678004F4257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE345208F3678004F4257 /* AppDelegate.swift */; };
 		CDEEE34B208F3678004F4257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE349208F3678004F4257 /* Main.storyboard */; };
 		CDEEE34D208F367A004F4257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE34C208F367A004F4257 /* Assets.xcassets */; };
@@ -18,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD82FB132091405E00BE6CDF /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDAAD97E20900E2C00E90BA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CDEEE342208F3678004F4257 /* Picture Slide Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picture Slide Puzzle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEEE345208F3678004F4257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDEEE34A208F3678004F4257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		CDEEE344208F3678004F4257 /* Picture Slide Puzzle */ = {
 			isa = PBXGroup;
 			children = (
+				CD82FB132091405E00BE6CDF /* PopOverViewController.swift */,
+				CDAAD97E20900E2C00E90BA0 /* Extensions.swift */,
 				CDA89BA7208FB65100CA07E6 /* PuzzleCollectionViewCell.swift */,
 				CDEEE358208F3995004F4257 /* SlidePuzzle.swift */,
 				CDEEE35A208F3AB9004F4257 /* Slide.swift */,
@@ -153,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDEEE35D208F3FCC004F4257 /* SlidePuzzleViewController.swift in Sources */,
+				CDAAD97F20900E2C00E90BA0 /* Extensions.swift in Sources */,
+				CD82FB142091405E00BE6CDF /* PopOverViewController.swift in Sources */,
 				CDA89BA8208FB65100CA07E6 /* PuzzleCollectionViewCell.swift in Sources */,
 				CDEEE35B208F3AB9004F4257 /* Slide.swift in Sources */,
 				CDEEE346208F3678004F4257 /* AppDelegate.swift in Sources */,

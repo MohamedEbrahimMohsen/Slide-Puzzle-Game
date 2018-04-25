@@ -26,7 +26,7 @@ class slidePuzzle: Codable{
         }
     }
     
-    func indexIsValid(row: Int, column: Int) -> Bool {
+    private func indexIsValid(row: Int, column: Int) -> Bool {
         return row >= 0 && row < rows && column >= 0 && column < columns
     }
     
@@ -37,26 +37,74 @@ class slidePuzzle: Codable{
         slidesInit()
     }
     
-    private func fun(){
-        
-    }
-    
     private func slidesInit(){
         for row in 0..<rows{
             for col in 0..<columns{
-                let slideNeighbours = getNeighboursOf(row: row, col: col)
-                slides.append(Slide(row: row, column: col, slideData: String(rows * row + col), neigbours: slideNeighbours)) // set slideData with array[width * row + col] = value; value = 0,1,2,...r*c
+                slides.append(Slide(row: row, column: col, slideData: nil , identifier: (rows * row + col), isThisTheEmptySlide: false))
             }
         }
     }
     
-    private func getNeighboursOf(row: Int, col: Int) -> [Neigbour]{
-        var neighbours = [Neigbour]()
-        if indexIsValid(row: row - 1, column: col){neighbours.append(Neigbour(direction: .up, isAccessible: true))}
-        if indexIsValid(row: row + 1, column: col){neighbours.append(Neigbour(direction: .down, isAccessible: true))}
-        if indexIsValid(row: row , column: col - 1){neighbours.append(Neigbour(direction: .left, isAccessible: true))}
-        if indexIsValid(row: row , column: col + 1){neighbours.append(Neigbour(direction: .right, isAccessible: true))}
-        return neighbours
+//    private func slidesInit(){
+//        for row in 0..<rows{
+//            for col in 0..<columns{
+//                let slideNeighbours = getNeighboursOf(row: row, col: col)
+//                slides.append(Slide(row: row, column: col, slideData: nil , neigbours: slideNeighbours, isThisTheEmptySlide: false))
+//            }
+//        }
+//    }
+    
+//    private func getNeighboursOf(row: Int, col: Int) -> [Neigbour]{
+//        var neighbours = [Neigbour]()
+//        if indexIsValid(row: row - 1, column: col){neighbours.append(Neigbour(direction: .up, isAccessible: true))}
+//        if indexIsValid(row: row + 1, column: col){neighbours.append(Neigbour(direction: .down, isAccessible: true))}
+//        if indexIsValid(row: row , column: col - 1){neighbours.append(Neigbour(direction: .left, isAccessible: true))}
+//        if indexIsValid(row: row , column: col + 1){neighbours.append(Neigbour(direction: .right, isAccessible: true))}
+//        return neighbours
+//    }
+    
+    private func canThisCoordSwapWithEmpty(row: Int, col: Int) -> Bool{
+        if let slide = self[row,col]{
+            return slide.isThisTheEmptySlide
+        }else{
+            return false
+        }
+    }
+    
+    private func getCoordOFTheEmptySlide() -> (Int, Int)?{
+        for index in slides.indices{
+            if slides[index].isThisTheEmptySlide == true {
+                return index.convertToRowColIndicesInMatrixOf(rows: rows, cols: columns)
+            }
+        }
+        return nil
+    }
+    
+    func getCoordOfTheEmptySlideIFThisCoordNeighbourIt(row: Int, col: Int) -> (Int,Int)?{
+        if let (emptyRow, emptyCol) = getCoordOFTheEmptySlide(){
+            if  (row - 1 == emptyRow) && (col == emptyCol) ||
+                (row + 1 == emptyRow) && (col == emptyCol) ||
+                (row == emptyRow) && (col - 1 == emptyCol) ||
+                (row == emptyRow) && (col + 1 == emptyCol)
+            {
+                swap(&self[row,col], &self[emptyRow,emptyCol])
+                return (emptyRow, emptyCol)
+            }
+        }
+        return nil
+    }
+    
+    func shuffle(){
+        slides.shuffle()
+    }
+    
+    func isFinished() -> Bool{
+        for index in slides.indices{
+            if slides[index].identifier != index {
+                return false
+            }
+        }
+        return true
     }
 }
 
